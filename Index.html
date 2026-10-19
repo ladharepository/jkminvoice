@@ -1856,6 +1856,60 @@ table.acc-t td,table.acc-t th{white-space:nowrap}
 .acc-tools button{padding:6px 12px;border:1.5px solid var(--rule);background:#fff;border-radius:var(--radius);font:500 12px 'DM Sans',sans-serif;cursor:pointer}
 @media(max-width:560px){.acc-cards{grid-template-columns:1fr 1fr}}
 @media print{body.acc-print #screen-acc{display:block!important}body.acc-print .acc-tabs,body.acc-print .acc-pbar,body.acc-print .acc-bk{display:none!important}body.acc-print #screen-acc .shell{max-width:none;box-shadow:none}}
+
+/* ── CUSTOMER PICKER (new invoice) + RECEIPT BALANCE ── */
+.cust-pick-row{display:flex;gap:8px;align-items:stretch}
+.cust-pick-row select{flex:1;min-width:0}
+.cust-new-btn{flex:0 0 auto;padding:8px 12px;border:1.5px dashed var(--rule);border-radius:var(--radius);background:#fff;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:600;color:var(--accent);cursor:pointer;white-space:nowrap}
+.cust-new-btn:hover{border-color:var(--accent)}
+.cust-pick-hint{font-size:11.5px;color:var(--muted);margin-top:5px;line-height:1.4;min-height:0}
+.cust-pick-hint:empty{display:none}
+.prev-due-hint{font-size:11px;color:var(--muted);margin:-4px 0 8px;line-height:1.4}
+.prev-due-hint:empty{display:none}
+.rc-bal{margin:0 0 10px;padding:9px 12px;border-radius:var(--radius);font-size:12.5px;line-height:1.5;background:var(--light);border:1px solid var(--rule);color:var(--muted)}
+.rc-bal.due{background:rgba(192,57,43,0.07);border-color:rgba(192,57,43,0.25);color:var(--ink)}
+.rc-bal.due b{color:var(--accent);font-family:'DM Serif Display',serif;font-size:16px}
+.rc-bal:empty{display:none}
+/* ── EDITABLE PREVIOUS DUE ── */
+.edit-tag{font-size:9.5px;font-weight:600;color:var(--accent);margin-left:4px;letter-spacing:.2px;text-transform:none}
+.prev-due-hint a{color:var(--accent);font-weight:600;text-decoration:underline;cursor:pointer}
+/* ── DEBTORS: list, ledger, export sheet ── */
+.deb-hero{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px}
+.deb-hero div{background:var(--light);border-radius:8px;padding:10px 12px}
+.deb-hero span{display:block;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+.deb-hero b{font:21px 'DM Serif Display',serif;color:var(--accent);font-weight:400}
+.deb-tools{padding:0 12px 6px}
+.deb-sw{position:relative}
+.deb-sw input{padding-right:34px!important}
+.deb-x{position:absolute;right:4px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--muted);font-size:14px;padding:6px 9px;cursor:pointer}
+.deb-fr{display:flex;gap:8px;margin-top:8px}
+.deb-fr select{flex:1;min-width:0;width:auto;padding:6px 8px;font-size:12.5px}
+.deb-cnt{padding:2px 12px 6px;font-size:11.5px;color:var(--muted);line-height:1.5}
+.deb-list{border-top:1px solid var(--rule)}
+.deb-row{display:flex;align-items:center;gap:10px;padding:12px;border-bottom:1px solid var(--light);background:#fff;cursor:pointer;transition:background .15s}
+.deb-row:hover{background:rgba(192,57,43,.05)}
+.deb-l{flex:1;min-width:0}
+.deb-nm{font-weight:600;font-size:14px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.deb-sub{font-size:11.5px;color:var(--muted);line-height:1.5;margin-top:1px;word-break:break-word}
+.deb-amt{font:17px 'DM Serif Display',serif;color:var(--accent);white-space:nowrap}
+.deb-amt.z{color:var(--muted)}
+.deb-ar{color:var(--muted);font-size:18px}
+.led-card{margin:10px 12px 0;padding:12px 14px;background:var(--light);border-left:4px solid var(--accent);border-radius:8px}
+.led-nm{font:21px 'DM Serif Display',serif;color:var(--ink);word-break:break-word}
+.led-out{margin-top:6px;font-size:12.5px}
+.led-sums{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;padding:10px 12px}
+.led-sum{background:#fff;border:1px solid var(--rule);border-radius:8px;padding:7px 4px;text-align:center;min-width:0}
+.led-sum span{display:block;font-size:9.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+.led-sum b{display:block;font-size:11.5px;margin-top:2px;word-break:break-word}
+.led-sum.c{background:var(--ink);border-color:var(--ink)}.led-sum.c span{color:rgba(255,255,255,.7)}.led-sum.c b{color:#fff}
+.led-tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.5px;padding:2px 6px;border-radius:3px;margin-right:4px;vertical-align:1px}
+.led-tag.s{background:rgba(192,57,43,.1);color:var(--accent)}
+.led-tag.r{background:rgba(39,174,96,.14);color:#1e8449}
+.led-tag.o{background:var(--light);color:var(--muted)}
+.xo{display:flex!important;gap:10px;align-items:flex-start;border:1.5px solid var(--rule);background:#fff;border-radius:8px;padding:10px 12px;margin:8px 0;font-size:12.5px;line-height:1.5;cursor:pointer;text-transform:none!important;letter-spacing:0!important;color:var(--ink)!important;font-weight:400!important}
+.xo input{margin-top:3px;width:auto;flex:none}
+.xrow{display:flex;gap:8px;margin:8px 0}
+@media print{.led-sums,.led-card{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 </style>
 </head>
 <body>
@@ -2032,7 +2086,7 @@ table.acc-t td,table.acc-t th{white-space:nowrap}
   <div class="shell">
     <div class="top-nav">
       <div style="display:flex;align-items:center;gap:10px">
-        <button class="back-btn" onclick="goHome()"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="back-btn" onclick="NAV.back()"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div><div class="nav-title">Past Invoices</div><div class="nav-subtitle" id="hist-subtitle">All records</div></div>
       </div>
       <button class="hamburger-btn" onclick="openMenu()"><span></span><span></span><span></span></button>
@@ -2055,7 +2109,7 @@ table.acc-t td,table.acc-t th{white-space:nowrap}
 
     <div class="top-nav no-print">
       <div style="display:flex;align-items:center;gap:10px">
-        <button class="back-btn" onclick="goHome()"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="back-btn" onclick="NAV.back()"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div><div class="nav-title" id="create-screen-title">New Invoice</div><div class="nav-subtitle">JKM</div></div>
       </div>
       <button class="hamburger-btn" onclick="openMenu()"><span></span><span></span><span></span></button>
@@ -2080,8 +2134,16 @@ table.acc-t td,table.acc-t th{white-space:nowrap}
     </div>
 
     <div class="section">
+      <div class="no-print" style="margin-bottom:10px">
+        <label>Select Customer</label>
+        <div class="cust-pick-row">
+          <select id="cust-select" onchange="pickCustomer(this.value)"><option value="">— Select saved customer —</option></select>
+          <button type="button" class="cust-new-btn" onclick="newCustomer()">+ New Customer</button>
+        </div>
+        <div class="cust-pick-hint" id="cust-pick-hint"></div>
+      </div>
       <div class="row-2">
-        <div><label>Customer Name</label><input type="text" id="cust-name" placeholder="Full name"></div>
+        <div><label>Customer Name</label><input type="text" id="cust-name" placeholder="Full name" onchange="custNameTyped()"></div>
         <div><label>Phone</label><input type="tel" id="cust-phone" placeholder="10-digit no."></div>
       </div>
       <div style="margin-top:8px"><label>Customer Address</label><input type="text" id="cust-address" placeholder="Street, City, State…"></div>
@@ -2109,9 +2171,10 @@ table.acc-t td,table.acc-t th{white-space:nowrap}
 
     <div class="payment-section">
       <div class="payment-input-row">
-        <label>Previous Due (₹)</label>
-        <input type="number" id="prev-due" placeholder="0.00" min="0" step="0.01" oninput="updatePayment()">
+        <label>Previous Due (₹) <span class="edit-tag no-print">✎ editable</span></label>
+        <input type="text" inputmode="decimal" autocomplete="off" id="prev-due" placeholder="0.00" oninput="prevDueInput(this)" onfocus="this.select()">
       </div>
+      <div class="prev-due-hint no-print" id="prev-due-hint"></div>
       <div class="total-row" id="final-total-row" style="padding:4px 0;font-size:13px;color:var(--ink);font-weight:600;display:none">
         <span>Total Payable</span><span id="final-total" style="font-family:'DM Serif Display',serif;font-size:17px;color:var(--accent)">₹0.00</span>
       </div>
@@ -2158,7 +2221,7 @@ table.acc-t td,table.acc-t th{white-space:nowrap}
   <div class="shell">
     <div class="top-nav no-print">
       <div style="display:flex;align-items:center;gap:10px">
-        <button class="back-btn" onclick="goHome()"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button class="back-btn" onclick="NAV.back()"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <div><div class="nav-title" id="acc-title">Accounts &amp; Reports</div><div class="nav-subtitle">JKM</div></div>
       </div>
       <button class="hamburger-btn" onclick="openMenu()"><span></span><span></span><span></span></button>
@@ -2183,40 +2246,74 @@ function saveHistory(arr) {
 }
 
 // ─── NAV ─────────────────────────────────────────
-function showScreen(id, pushState = true) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  window.scrollTo(0, 0);
-  if (pushState) history.pushState({ screen: id }, '', '');
-}
-
-// Hardware / browser back button
-window.addEventListener('popstate', () => {
-  const current = document.querySelector('.screen.active')?.id;
-  if (current === 'screen-create' || current === 'screen-history') {
-    refreshHomeStats(); showScreen('screen-home', false);
-  } else if (current === 'screen-view') {
-    renderHistoryTable(); showScreen('screen-history', false);
-  } else {
-    refreshHomeStats(); showScreen('screen-home', false);
+// ONE navigation history for the whole app. Every screen / report page you open is remembered, and the in-app back arrow,
+// the phone's back button and the browser's back button all return to the page you were on just before (never straight to Home).
+window.NAV = (function () {
+  let stack = [], idx = -1, restoring = false, ignore = 0;
+  const show = id => {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  };
+  // id = screen element, key = identity of the page (same key = same page, so re-drawing it never adds a history step),
+  // restore = how to redraw the page when you come back to it
+  function go(id, key, restore, opts) {
+    restore = restore || function () {};
+    const here = stack[idx];
+    if (restoring) { if (here) { here.restore = restore; here.id = id; } show(id); return; }
+    if (here && here.key === key) { here.restore = restore; here.id = id; show(id); window.scrollTo(0, 0); return; }
+    // a form (new receipt, new purchase…) that returns to the page it was opened from simply closes itself
+    if (here && here.form && idx > 0 && stack[idx - 1].key === key) {
+      stack[idx - 1].restore = restore;
+      stack.length = idx; idx--; ignore++; setTimeout(() => { ignore = 0; }, 900); history.back();
+      show(id); window.scrollTo(0, 0); return;
+    }
+    if (here) here.scroll = window.scrollY;
+    stack.length = idx + 1;
+    stack.push({ id, key, restore, scroll: 0, form: !!(opts && opts.form) });
+    idx++;
+    history.pushState({ nav: idx }, '', '');
+    show(id); window.scrollTo(0, 0);
   }
-});
+  function back() { if (idx > 0) history.back(); else goHome(); }
+  function reset() {
+    stack = [{ id: 'screen-home', key: 'home', restore: () => refreshHomeStats(), scroll: 0, form: false }]; idx = 0;
+    history.replaceState({ nav: 0 }, '', ''); refreshHomeStats(); show('screen-home'); window.scrollTo(0, 0);
+  }
+  window.addEventListener('popstate', e => {
+    if (ignore > 0) { ignore--; return; }
+    if (typeof closeMenu === 'function') closeMenu();
+    const n = e.state && typeof e.state.nav === 'number' ? e.state.nav : -1, ent = stack[n];
+    if (!ent) { reset(); return; }
+    idx = n; restoring = true;
+    try { show(ent.id); ent.restore(); } catch (err) { console.warn('[NAV] restore failed', err); } finally { restoring = false; }
+    window.scrollTo(0, ent.scroll || 0);
+  });
+  function init() {
+    stack = [{ id: 'screen-home', key: 'home', restore: () => refreshHomeStats(), scroll: 0, form: false }]; idx = 0;
+    history.replaceState({ nav: 0 }, '', '');
+  }
+  return { go, back, init, depth: () => idx };
+})();
 
-function goHome() { refreshHomeStats(); showScreen('screen-home'); }
+function showScreen(id, key, restore) { NAV.go(id, key || id, restore); }
+function goHome() { refreshHomeStats(); showScreen('screen-home', 'home', () => refreshHomeStats()); }
 function goCreate() {
   currentEditingId = null;
   document.getElementById('edit-banner').style.display = 'none';
   document.getElementById('create-screen-title').textContent = 'New Invoice';
   document.getElementById('inv-badge-label').textContent = 'Invoice';
   resetForm();
-  showScreen('screen-create');
+  showScreen('screen-create', 'create');
 }
-function goHistory() { renderHistoryTable(); showScreen('screen-history'); }
+function goHistory() { renderHistoryTable(); showScreen('screen-history', 'history', () => renderHistoryTable()); }
 function goViewInvoice(id) {
   const inv = getHistory().find(h => h.id === id);
   if (!inv) return;
   renderViewScreen(inv);
-  showScreen('screen-view');
+  showScreen('screen-view', 'view:' + id, () => {
+    const v = getHistory().find(h => h.id === id);
+    if (v) renderViewScreen(v); else { showToast('This invoice no longer exists'); setTimeout(() => NAV.back(), 0); }
+  });
 }
 
 // ─── MENU ─────────────────────────────────────────
@@ -2298,7 +2395,7 @@ function renderViewScreen(inv) {
   document.getElementById('view-shell').innerHTML = `
     <div class="top-nav no-print">
       <div style="display:flex;align-items:center;gap:10px">
-        <button class="back-btn" onclick="goHistory()">
+        <button class="back-btn" onclick="NAV.back()">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="rgba(255,255,255,0.8)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <div><div class="nav-title">Invoice #${escHtml(inv.invNo)}</div><div class="nav-subtitle">Read-only</div></div>
@@ -2403,10 +2500,14 @@ function loadIntoEdit(id) {
   if (!inv.items?.length) addRow();
   updateTotals();
   currentEditingId = inv.id;
+  populateCustomerPicker((inv.custName || '').trim() ? custKey(inv.custName) : '');   // select only; saved values stay exactly as they were
+  prevDueAuto = null;
+  if ((inv.custName || '').trim()) { const k = custKey(inv.custName), m = customerMap(); if (m[k]) prevDueAuto = { key: k, name: m[k].name, val: previousDueFor(k, m) }; }
+  refreshPrevDueHint();
   document.getElementById('edit-banner').style.display = 'flex';
   document.getElementById('create-screen-title').textContent = 'Edit Invoice';
   document.getElementById('inv-badge-label').textContent = 'Edit';
-  showScreen('screen-create');
+  showScreen('screen-create', 'create');
   showToast('Invoice loaded — edit and save to update');
 }
 
@@ -2414,7 +2515,129 @@ function cancelEdit() {
   currentEditingId = null;
   document.getElementById('edit-banner').style.display = 'none';
   document.getElementById('create-screen-title').textContent = 'New Invoice';
-  goHome();
+  NAV.back();
+}
+
+// ─── CUSTOMER PICKER (New Invoice) ────────────────
+// The customer list is DERIVED from data you already have (invoices, receipts, opening debtors),
+// so nothing new is stored and nothing new needs to sync. A customer becomes "saved" the moment an invoice is saved for them.
+function custKey(n) { return (n || '').trim().toLowerCase() || 'walk-in'; }   // same matching rule as the Debtors ledger
+function getCustomerDirectory() {
+  const dir = {};
+  // balances come from the same ledger engine as Debtors, so a customer's "previous due" always equals their Debtors balance
+  try {
+    const M = (window.ACC && ACC._e) ? ACC._e.cust('9999-12-31') : {};
+    for (const k in M) { if (k === 'walk-in') continue; dir[k] = { key: k, name: M[k].name, phone: '', address: '', bal: M[k].bal || 0 }; }
+  } catch (e) { console.warn('customer balances unavailable', e); }
+  // latest phone / address / spelling of the name from their most recent invoices
+  getHistory().filter(i => (i.custName || '').trim())
+    .sort((a, b) => (a.date || '') < (b.date || '') ? -1 : (a.date || '') > (b.date || '') ? 1 : (a.id < b.id ? -1 : 1))
+    .forEach(i => {
+      const k = custKey(i.custName);
+      const c = dir[k] || (dir[k] = { key: k, name: i.custName.trim(), phone: '', address: '', bal: 0 });
+      c.name = i.custName.trim();
+      if ((i.custPhone || '').trim()) c.phone = i.custPhone.trim();
+      if ((i.custAddress || '').trim()) c.address = i.custAddress.trim();
+    });
+  return Object.values(dir).sort((a, b) => a.name.localeCompare(b.name));
+}
+function customerMap() { const m = {}; getCustomerDirectory().forEach(c => m[c.key] = c); return m; }
+
+// What the customer owed BEFORE the invoice on screen. When an already-saved invoice is open (editing, or Save pressed twice),
+// that invoice's own effect is taken out so it is never counted against itself.
+function previousDueFor(key, map) {
+  const c = (map || customerMap())[key]; if (!c) return 0;
+  let bal = c.bal;
+  const openId = currentEditingId || window.__jkmSavedId;
+  if (openId) {
+    const inv = getHistory().find(h => h.id === openId);
+    if (inv && custKey(inv.custName) === key) bal -= (inv.grandTotal || 0) - (inv.amtPaid || 0);
+  }
+  return Math.max(0, Math.round(bal * 100) / 100);
+}
+
+function populateCustomerPicker(selKey) {
+  const sel = document.getElementById('cust-select'); if (!sel) return;
+  const dir = getCustomerDirectory();
+  sel.innerHTML = '<option value="">— Select saved customer —</option>' + dir.map(c =>
+    `<option value="${escHtml(c.key)}">${escHtml(c.name)}${c.bal > 0.005 ? ' — due ₹' + c.bal.toFixed(2) : ''}</option>`).join('');
+  sel.value = (selKey && dir.some(c => c.key === selKey)) ? selKey : '';
+}
+// ─── PREVIOUS DUE (editable) ──────────────────────
+// The balance from your books is filled in as a starting point, but the field is a normal text box: type any amount you want
+// for THIS invoice. "Reset" brings back the figure from your books. (Your Debtors balance is never changed by editing it.)
+let prevDueAuto = null;   // { key, name, val } = what the books say this customer owes
+function parseMoney(v) { const n = parseFloat(String(v == null ? '' : v).replace(/[^0-9.]/g, '')); return isFinite(n) ? n : 0; }
+function prevDueInput(el) {
+  let s = el.value.replace(/[^0-9.]/g, '');
+  const i = s.indexOf('.');
+  if (i !== -1) s = s.slice(0, i + 1) + s.slice(i + 1).replace(/\./g, '').slice(0, 2);
+  if (s !== el.value) el.value = s;
+  refreshPrevDueHint(); updatePayment();
+}
+function refreshPrevDueHint() {
+  const h = document.getElementById('prev-due-hint'); if (!h) return;
+  const cur = Math.round(parseMoney(document.getElementById('prev-due').value) * 100) / 100;
+  if (!prevDueAuto || (prevDueAuto.val < 0.005 && cur === 0)) { h.innerHTML = ''; return; }
+  const a = prevDueAuto, amt = '₹' + a.val.toFixed(2);
+  h.innerHTML = Math.abs(cur - a.val) < 0.005
+    ? 'Filled in from ' + escHtml(a.name) + '’s pending balance (' + amt + '). You can type a different amount — it only changes this invoice.'
+    : '✎ Changed by you. Your books show ' + amt + ' pending for ' + escHtml(a.name) + ' (not affected by this). <a onclick="resetPrevDue()">Reset to ' + amt + '</a>';
+}
+function resetPrevDue() {
+  if (!prevDueAuto) return;
+  document.getElementById('prev-due').value = prevDueAuto.val > 0 ? prevDueAuto.val : '';
+  refreshPrevDueHint(); updatePayment();
+}
+
+function setPickHint(msg) { const h = document.getElementById('cust-pick-hint'); if (h) h.textContent = msg || ''; }
+
+// Customer chosen from the list → name, phone, address and previous due are filled in (the previous due stays editable)
+function pickCustomer(key) {
+  if (!key) { setPickHint(''); return; }
+  const map = customerMap(), c = map[key]; if (!c) return;
+  document.getElementById('cust-name').value = c.name;
+  document.getElementById('cust-phone').value = c.phone;
+  document.getElementById('cust-address').value = c.address;
+  const pd = previousDueFor(key, map);
+  prevDueAuto = { key, name: c.name, val: pd };
+  document.getElementById('prev-due').value = pd > 0 ? pd : '';
+  setPickHint('');
+  refreshPrevDueHint();
+  updatePayment();
+}
+// "+ New Customer" → blank customer fields, no previous due; the customer is saved with the invoice
+function newCustomer() {
+  document.getElementById('cust-select').value = '';
+  ['cust-name', 'cust-phone', 'cust-address', 'prev-due'].forEach(id => { document.getElementById(id).value = ''; });
+  prevDueAuto = null; refreshPrevDueHint();
+  setPickHint('New customer — fill in the details below. They will be saved with this invoice and will appear in the list next time.');
+  updatePayment();
+  document.getElementById('cust-name').focus();
+}
+// Name typed by hand that matches a saved customer → link it, fill only EMPTY fields (never overwrites what was typed)
+function custNameTyped() {
+  const name = document.getElementById('cust-name').value.trim();
+  const sel = document.getElementById('cust-select');
+  const pv = document.getElementById('prev-due');
+  const untouched = () => !pv.value || (prevDueAuto && Math.abs(parseMoney(pv.value) - prevDueAuto.val) < 0.005);   // still the auto-filled figure
+  if (!name) { sel.value = ''; return; }
+  const key = custKey(name), map = customerMap(), c = map[key];
+  if (!c) {
+    sel.value = '';
+    if (prevDueAuto) { if (untouched()) pv.value = ''; prevDueAuto = null; refreshPrevDueHint(); updatePayment(); }   // a different, new name: drop the old customer's figure
+    return;
+  }
+  if (sel.value === key) return;
+  populateCustomerPicker(key);
+  const ph = document.getElementById('cust-phone'), ad = document.getElementById('cust-address');
+  if (!ph.value.trim()) ph.value = c.phone;
+  if (!ad.value.trim()) ad.value = c.address;
+  const pd = previousDueFor(key, map), fill = untouched();
+  prevDueAuto = { key, name: c.name, val: pd };
+  if (fill) pv.value = pd > 0 ? pd : '';
+  refreshPrevDueHint(); updatePayment();
+  setPickHint('Existing customer found — details filled in.');
 }
 
 // ─── FORM ─────────────────────────────────────────
@@ -2461,7 +2684,7 @@ function updateTotals() {
 }
 
 function updatePayment() {
-  const prevDue = Math.max(0, parseFloat(document.getElementById('prev-due').value) || 0);
+  const prevDue = Math.max(0, Math.round(parseMoney(document.getElementById('prev-due').value) * 100) / 100);
   const finalTotalRow = document.getElementById('final-total-row');
   const finalTotal = grandTotalValue + prevDue;
 
@@ -2496,6 +2719,7 @@ function resetForm(silent = false) {
   rowCount = 0; grandTotalValue = 0;
   updateTotals();
   if (!silent) { addRow(); addRow(); addRow(); }
+  populateCustomerPicker(''); setPickHint(''); prevDueAuto = null; refreshPrevDueHint();   // customer list refreshed every time the form is (re)opened
 }
 
 function clearForm() {
@@ -2519,7 +2743,7 @@ function saveInvoice(deferPrompt) {
   });
 
   const paid = Math.max(0, parseFloat(document.getElementById('amt-paid').value) || 0);
-  const prevDue = Math.max(0, parseFloat(document.getElementById('prev-due').value) || 0);
+  const prevDue = Math.max(0, Math.round(parseMoney(document.getElementById('prev-due').value) * 100) / 100);
   const finalTotal = grandTotalValue + prevDue;
   // [JKM-CLOUD] pressing Save again on the same form updates the same invoice instead of creating a duplicate sale
   const editId = currentEditingId || window.__jkmSavedId || null;
@@ -2579,7 +2803,7 @@ function deleteInvoiceFromView(id) {
   let h = getHistory().filter(x => x.id !== id);
   saveHistory(h); refreshHomeStats();
   showToast('Invoice deleted');
-  goHistory();
+  NAV.back();
 }
 
 // ─── PDF (create screen) ──────────────────────────
@@ -2593,6 +2817,12 @@ async function exportPDF() {
   paidDisplay.textContent = '₹' + (parseFloat(paidInput.value) || 0).toFixed(2);
   paidInput.parentNode.insertBefore(paidDisplay, paidInput.nextSibling);
   paidInput.style.display = 'none';
+  const prevInput = document.getElementById('prev-due');
+  const prevDisplay = document.createElement('div');
+  prevDisplay.style.cssText = paidDisplay.style.cssText;
+  prevDisplay.textContent = '₹' + parseMoney(prevInput.value).toFixed(2);
+  prevInput.parentNode.insertBefore(prevDisplay, prevInput.nextSibling);
+  prevInput.style.display = 'none';
   const custName = document.getElementById('cust-name').value.trim() || 'Invoice';
   const invNo = document.getElementById('inv-no').value.trim() || '001';
   try {
@@ -2606,6 +2836,7 @@ async function exportPDF() {
     }).from(document.querySelector('#screen-create .shell')).save();
   } catch(e) { alert('PDF export failed. Try Print.'); }
   paidDisplay.remove(); paidInput.style.display = '';
+  prevDisplay.remove(); prevInput.style.display = '';
   document.querySelectorAll('.no-print').forEach(el => el.style.display = '');
   btn.classList.remove('loading');
   btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 13h10M8 2v8M5 7l3 3 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> PDF`;
@@ -2626,8 +2857,9 @@ async function exportROPDF(id) {
 }
 
 // ─── WHATSAPP ────────────────────────────────────
-function buildWAMsg(name, invNo, date, count, grand, paid, due) {
-  return `🧾 *Invoice Summary*\n\n*Jugal Kishore Maheshwari*\n\n👤 Customer: ${name}\n📅 Date: ${date}\n🔢 Invoice No: #${invNo}\n📦 Items: ${count}\n\n💰 Grand Total: *${grand}*\n✅ Amount Paid: *${paid}*\n⚡ Amount Due: *${due}*\n\n_Thank you for your business!_`;
+function buildWAMsg(name, invNo, date, count, grand, paid, due, prevDue, payable) {
+  const prevLines = (prevDue > 0) ? `\n📌 Previous Due: *₹${prevDue.toFixed(2)}*\n🧮 Total Payable: *₹${payable.toFixed(2)}*` : '';
+  return `🧾 *Invoice Summary*\n\n*Jugal Kishore Maheshwari*\n\n👤 Customer: ${name}\n📅 Date: ${date}\n🔢 Invoice No: #${invNo}\n📦 Items: ${count}\n\n💰 Grand Total: *${grand}*${prevLines}\n✅ Amount Paid: *${paid}*\n⚡ Amount Due: *${due}*\n\n_Thank you for your business!_`;
 }
 function sendWhatsApp() {
   const phone = document.getElementById('cust-phone').value.trim().replace(/\D/g,'');
@@ -2638,13 +2870,14 @@ function sendWhatsApp() {
   const date = document.getElementById('inv-date').value || today;
   const paid = '₹' + (parseFloat(document.getElementById('amt-paid').value) || 0).toFixed(2);
   const count = document.querySelectorAll('.item-row').length;
-  window.open(`https://wa.me/${number}?text=${encodeURIComponent(buildWAMsg(name, invNo, date, count, document.getElementById('grand-total').textContent, paid, document.getElementById('amt-due').textContent))}`, '_blank');
+  const prevDue = Math.max(0, Math.round(parseMoney(document.getElementById('prev-due').value) * 100) / 100);
+  window.open(`https://wa.me/${number}?text=${encodeURIComponent(buildWAMsg(name, invNo, date, count, document.getElementById('grand-total').textContent, paid, document.getElementById('amt-due').textContent, prevDue, grandTotalValue + prevDue))}`, '_blank');
 }
 function sendWAFromView(inv) {
   const phone = (inv.custPhone || '').replace(/\D/g,'');
   if (!phone || phone.length < 10) { alert('No valid phone number for this customer.'); return; }
   const number = phone.startsWith('91') ? phone : '91' + phone;
-  window.open(`https://wa.me/${number}?text=${encodeURIComponent(buildWAMsg(inv.custName || 'Customer', inv.invNo, inv.date, (inv.items||[]).length, '₹'+inv.grandTotal.toFixed(2), '₹'+(inv.amtPaid||0).toFixed(2), '₹'+(inv.amtDue||0).toFixed(2)))}`, '_blank');
+  window.open(`https://wa.me/${number}?text=${encodeURIComponent(buildWAMsg(inv.custName || 'Customer', inv.invNo, inv.date, (inv.items||[]).length, '₹'+inv.grandTotal.toFixed(2), '₹'+(inv.amtPaid||0).toFixed(2), '₹'+(inv.amtDue||0).toFixed(2), inv.prevDue || 0, inv.finalTotal || (inv.grandTotal + (inv.prevDue || 0))))}`, '_blank');
 }
 
 // ─── UTILS ───────────────────────────────────────
@@ -2752,7 +2985,7 @@ document.getElementById('inv-date').value = today;
 refreshHomeStats();
 addRow(); addRow(); addRow();
 // Seed history so first back press is handled
-history.replaceState({ screen: 'screen-home' }, '', '');
+NAV.init();
 
 
 // ══════════════════════════════════════════════════
@@ -2997,7 +3230,8 @@ function page(title,build,tools){
   $('acc-tabs').innerHTML=TABS.map(([k,l])=>`<button class="acc-tab${cur.n===k||cur.top===k?' on':''}" onclick="ACC.go('${k}')">${l}</button>`).join('');
   $('acc-title').textContent=title;
   $('acc-body').innerHTML=(tools?`<div class="acc-tools no-print"><button onclick="window.print()">🖨 Print</button><button onclick="ACC.csv()">⬇ CSV</button><button onclick="ACC.pdf()">⬇ PDF</button></div>`:'')+h;
-  if(!document.querySelector('#screen-acc.active')){showScreen('screen-acc')}else window.scrollTo(0,0);
+  const _n=cur.n,_p=cur.p;   /* each report page is a step in the shared back-history; a form belongs to the page it was opened from */
+  NAV.go('screen-acc',inV?'acc:'+_n+':'+JSON.stringify(_p||{}):'acc-form:'+title,()=>realGo(_n,_p),{form:!inV});
 }
 const tbl=(name,head,rows,opt={})=>{
   const num=head.map(h=>h[0]==='#');
@@ -3068,53 +3302,293 @@ V.drill=(k,arg)=>{if(k&&typeof k==='object'){arg=k.arg;k=k.k}const top=['ar','ap
   else if(k==='ap'){title='Trade payables';const M=sup(t);rows=Object.values(M).filter(s=>Math.abs(s.bal)>0.005).map(s=>({c:[E(s.name),inr(s.bal)],f:()=>ACC.go('sledger',{k:s.k})}));h=['Supplier','#Balance'];}
   else if(k==='epay'){title='Unpaid expenses';rows=D.ex.filter(e=>e.date<=t&&(!e.paid||e.pd>t)).map(e=>[fd(e.date),E(e.cat),E(e.desc),inr(e.amt)]);h=['Date','Category','Description','#Amount'];}
   else if(k==='equity'){title='Owner\'s equity';const B=bs(t);rows=[['Capital (opening + introduced)',inr(B.cap)],['Less: drawings',inr(-B.dr)],['Profit / loss accumulated to date',inr(B.retained)],{c:['Total equity',inr(B.eq)],b:1}];h=['Component','#Amount'];}
-  return page(title,()=>pbar()+`<div class="acc-bk no-print"><button class="btn-clear" onclick="ACC.go('${top}')">‹ Back</button></div>`+tbl(title,h,rows),1);
+  return page(title,()=>pbar()+`<div class="acc-bk no-print"><button class="btn-clear" onclick="NAV.back()">‹ Back</button></div>`+tbl(title,h,rows),1);
 };
 function sup(t){const M={},g=n=>{const k=cid(n);return M[k]||(M[k]={k,name:n,open:0,pu:[],bal:0,paid:0,bought:0})};
   D.op.cred.forEach(x=>{g(x.name).open+=+x.amt});D.pu.filter(u=>u.date<=t).forEach(u=>g(u.supplier).pu.push(u));
   for(const k in M){const s=M[k];s.bought=r2(s.pu.reduce((a,u)=>a+u.amt+u.direct,0));s.paid=r2(s.pu.reduce((a,u)=>a+u.pay.filter(y=>y.date<=t).reduce((b,y)=>b+y.amt,0),0));s.bal=r2(s.open+s.bought-s.paid)}return M}
 
 // ── DEBTORS ──────────────────────────────────────
-let dflt='pending';
-V.debtors=()=>{cur={n:'debtors',p:{}};const t=range()[1],M=cust(t);let cs=Object.values(M);
-  const flt={all:()=>1,pending:c=>c.bal>0.005,overdue:c=>c.bal>0.005&&c.age>D.credit,paid:c=>Math.abs(c.bal)<=0.005&&c.sales>0};
-  const list=cs.filter(flt[dflt]).sort((a,b)=>b.bal-a.bal),tot=r2(list.reduce((s,c)=>s+c.bal,0));
-  return page('Debtors',()=>pbar('As at ')+`<div class="acc-pbar no-print"><select onchange="ACC.dflt(this.value)">${[['pending','Pending payments'],['overdue','Overdue (>'+D.credit+' days)'],['all','All customers'],['paid','Fully paid']].map(([k,l])=>`<option value="${k}"${dflt===k?' selected':''}>${l}</option>`).join('')}</select></div>
-   <div class="acc-sum">Total receivable (as at ${fd(t)}): <b>${inr(Object.values(M).reduce((s,c)=>s+Math.max(0,c.bal),0))}</b></div>`+
-   tbl('Debtors',['Customer','Phone','#Invoices','#Total sales','#Received','#Outstanding','Oldest due','Last payment','#Age (days)'],
-    list.map(c=>({c:[E(c.name),E(c.phone),c.inv.length,inr(c.sales),inr(c.recd),money(c.bal),fd(c.oldest),fd(c.last),c.bal>0.005?c.age:'—'],f:()=>ACC.go('ledger',{k:c.k})})),{empty:'No customers match this filter.'}),1);
-};
-V.ledger=p=>{cur={n:'ledger',p,top:'debtors'};const t=range()[1],M=cust('9999-12-31'),c=M[p.k];
-  if(!c)return ACC.go('debtors');
-  const L=[];if(c.open)L.push({d:D.op.date,s:0,p:'Opening balance',dr:c.open,cr:0});
-  c.inv.forEach(i=>{L.push({d:i.date,s:1,p:'Invoice #'+E(i.invNo),dr:i.grandTotal,cr:0,f:()=>goViewInvoice(i.id)});if(i.legacy)L.push({d:i.date,s:2,p:'Paid with invoice #'+E(i.invNo),dr:0,cr:i.legacy})});
-  c.rc.forEach(r=>L.push({d:r.date,s:3,p:'Receipt '+E(r.no)+' ('+E(r.method)+')'+((r.al||[]).length?' → inv '+r.al.map(a=>{const i=c.inv.find(x=>x.id==a.inv);return i?'#'+E(i.invNo):'?'}).join(', '):' → on account'),dr:0,cr:r.amt,id:r.id}));
-  L.sort((a,b)=>a.d<b.d?-1:a.d>b.d?1:a.s-b.s);let run=0;
-  const rows=L.map(x=>{run=r2(run+x.dr-x.cr);return{c:[fd(x.d),x.p,x.dr?inr(x.dr):'',x.cr?inr(x.cr):'',inr(run),x.id?`<a class="acc-lk" onclick="${ref(()=>delRc(x.id))}">✕</a>`:''],f:x.f}});
+// Statement logic. A customer's ledger is: opening balance → sales / receipts in date order → closing balance, for any period.
+let dflt='pending',dsearch='',dsort='due',debM=null,debKeys=[];
+let lper={k:'all',f:'',t:''};                                   // period shown in a debtor's ledger
+let xs={type:'bal',k:'all',f:'',t:'',scope:'screen',newpage:true};   // choices in the export sheet
+const PERS=[['all','All dates'],['today','Today'],['month','This month'],['prev','Previous month'],['fy','Current FY'],['pfy','Previous FY'],['custom','Custom']];
+const perOf=P=>{const t0=lt();switch(P.k){
+  case'all':return['','9999-12-31'];case'today':return[t0,t0];case'month':return[t0.slice(0,8)+'01',eom(t0)];
+  case'prev':{const f=addD(t0.slice(0,8)+'01',-1);return[f.slice(0,8)+'01',f]}
+  case'fy':return[fyS(t0),fyE(t0)];case'pfy':{const s=addD(fyS(t0),-1);return[fyS(s),s]}
+  default:return[P.f||'',P.t||'9999-12-31']}};
+const perTxt=P=>{if(P.k==='all')return'All dates';const[f,t]=perOf(P);return(f?fd(f):'Beginning')+' – '+(t>='9999'?'to date':fd(t))};
+const bt=x=>Math.abs(x)<0.005?inr(0):x<0?inr(-x)+' Cr':inr(x);   // balance text: "Cr" = advance in the customer's favour
+const perSel=(P,fn,id)=>`<select${id?` id="${id}"`:''} onchange="${fn}(this.value)">${PERS.map(([k,l])=>`<option value="${k}"${P.k===k?' selected':''}>${l}</option>`).join('')}</select>`;
+
+function custInfo(c){let ph=c.phone||'',ad='';
+  c.inv.forEach(i=>{if((i.custPhone||'').trim())ph=i.custPhone.trim();if((i.custAddress||'').trim())ad=i.custAddress.trim()});   // invoices are oldest→newest, so the latest wins
+  return{ph,ad}}
+// every sale and every receipt of one customer, oldest first (the opening debtor balance is handled separately as the opening balance)
+function ledEntries(c){const L=[];
+  c.inv.forEach(i=>{
+    L.push({d:i.date||'',s:1,k:'sale',p:'Invoice #'+i.invNo,dr:r2(i.grandTotal),cr:0,inv:i.id});
+    if(i.legacy>0)L.push({d:i.date||'',s:2,k:'rcpt',p:'paid on the spot with invoice #'+i.invNo,dr:0,cr:r2(i.legacy),inv:i.id})});
+  c.rc.forEach(r=>{const al=r.al||[],to=al.length?'against '+al.map(a=>{const i=c.inv.find(x=>x.id==a.inv);return i?'#'+i.invNo:'?'}).join(', '):'on account';
+    L.push({d:r.date||'',s:3,k:'rcpt',p:r.no+' ('+r.method+')'+(r.ref?' · ref '+r.ref:'')+' · '+to,dr:0,cr:r2(r.amt),rc:r.id})});
+  L.sort((a,b)=>a.d<b.d?-1:a.d>b.d?1:a.s-b.s);return L}
+// f = first day ('' = from the beginning), t = last day
+function ledPeriod(c,f,t){let ob=r2(+c.open||0),sales=0,recd=0;const rows=[];
+  ledEntries(c).forEach(x=>{if(f&&x.d<f){ob=r2(ob+x.dr-x.cr);return}if(x.d>t)return;rows.push(x);sales=r2(sales+x.dr);recd=r2(recd+x.cr)});
+  let run=ob;rows.forEach(x=>{run=r2(run+x.dr-x.cr);x.bal=run});
+  return{ob,rows,sales,recd,cb:r2(ob+sales-recd),f,t}}
+
+const ageOf=c=>c.oldest?Math.max(0,dd(c.oldest,lt())):0;   // days since the oldest unpaid amount, counted to today
+const sortFn={due:(a,b)=>b.bal-a.bal||a.name.localeCompare(b.name),name:(a,b)=>a.name.localeCompare(b.name),
+  old:(a,b)=>{const x=a.bal>0.005&&a.oldest?a.oldest:'9999',y=b.bal>0.005&&b.oldest?b.oldest:'9999';return x<y?-1:x>y?1:b.bal-a.bal}};
+function debList(M){
+  const flt={all:()=>1,pending:c=>c.bal>0.005,overdue:c=>c.bal>0.005&&ageOf(c)>D.credit,paid:c=>Math.abs(c.bal)<=0.005&&c.sales>0};
+  const q=dsearch.trim().toLowerCase(),qd=q.replace(/\D/g,'');
+  return Object.values(M).filter(flt[dflt]||flt.pending).filter(c=>{if(!q)return true;return c.name.toLowerCase().includes(q)||(qd&&custInfo(c).ph.replace(/\D/g,'').includes(qd))}).sort(sortFn[dsort]||sortFn.due)}
+function debRows(list){
+  if(!list.length)return`<div class="empty-history">${dsearch.trim()?'No debtor matches “'+E(dsearch.trim())+'”.':'No customers match this filter.'}</div>`;
+  return list.map(c=>{const inf=custInfo(c),n=c.inv.length,due=c.bal>0.005;
+    const sub=[inf.ph?E(inf.ph):'',n+' invoice'+(n===1?'':'s'),due&&c.oldest?'due since '+fd(c.oldest)+(ageOf(c)>0?' ('+ageOf(c)+' days)':''):(c.last?'last payment '+fd(c.last):'')].filter(Boolean).join(' · ');
+    const amt=c.bal<-0.005?`<span style="color:var(--green)">${inr(-c.bal)} Cr</span>`:inr(c.bal);
+    return`<div class="deb-row" onclick="${ref(()=>ACC.go('ledger',{k:c.k}))}"><div class="deb-l"><div class="deb-nm">${E(c.name)}</div><div class="deb-sub">${sub}</div></div><div class="deb-amt${due?'':' z'}">${amt}</div><div class="deb-ar">›</div></div>`}).join('')}
+// redraws only the list (so the search box keeps focus while typing)
+function debPaint(){const box=$('deb-list');if(!box)return;
+  const M=debM||(debM=cust('9999-12-31')),list=debList(M);debKeys=list.map(c=>c.k);
+  box.innerHTML=debRows(list);
+  const tot=r2(list.reduce((s,c)=>s+Math.max(0,c.bal),0));
+  $('deb-cnt').textContent='Showing '+list.length+' of '+Object.keys(M).length+' customers · '+inr(tot)+' receivable';
+  LT={name:'Debtors',head:['Customer','Phone','Invoices','Total sales','Received','Outstanding','Oldest due','Last payment','Age (days)'],
+    rows:list.map(c=>[c.name,custInfo(c).ph,c.inv.length,inr(c.sales),inr(c.recd),inr(c.bal),fd(c.oldest),fd(c.last),c.bal>0.005?ageOf(c):'—'])}}
+
+V.debtors=()=>{cur={n:'debtors',p:{}};debM=cust('9999-12-31');
+  const all=Object.values(debM),tot=r2(all.reduce((s,c)=>s+Math.max(0,c.bal),0)),np=all.filter(c=>c.bal>0.005).length;
+  const opt=(arr,v)=>arr.map(([k,l])=>`<option value="${k}"${v===k?' selected':''}>${l}</option>`).join('');
+  page('Debtors',()=>`<div class="deb-hero"><div><span>Total receivable</span><b>${inr(tot)}</b></div><div><span>Debtors with pending balance</span><b>${np}</b></div></div>
+   <div class="deb-tools no-print"><div class="deb-sw"><input type="text" id="deb-q" placeholder="🔍  Search debtor by name or phone" value="${E(dsearch)}" oninput="ACC.dq(this.value)" autocomplete="off"><button class="deb-x" onclick="ACC.dq('',1)" title="Clear search">✕</button></div>
+    <div class="deb-fr"><select onchange="ACC.dflt(this.value)">${opt([['pending','Pending payments'],['overdue','Overdue (>'+D.credit+' days)'],['all','All customers'],['paid','Fully paid']],dflt)}</select>
+    <select onchange="ACC.dsort(this.value)">${opt([['due','Highest due first'],['name','Name A–Z'],['old','Oldest due first']],dsort)}</select></div></div>
+   <div class="deb-cnt no-print" id="deb-cnt"></div>
+   <div class="acc-bk no-print"><button class="btn-save" style="background:var(--accent)" onclick="ACC.dexp()">⬇ Export PDF</button><button class="btn-clear" onclick="ACC.csv()">⬇ CSV</button><button class="btn-clear" onclick="window.print()">🖨 Print</button></div>
+   <div class="deb-list" id="deb-list"></div>`);
+  debPaint()};
+
+V.ledger=p=>{cur={n:'ledger',p,top:'debtors'};
+  const M=cust('9999-12-31'),c=M[p.k];if(!c)return ACC.go('debtors');
+  const[f,t]=perOf(lper),P=ledPeriod(c,f,t),inf=custInfo(c);
+  const tag=x=>`<span class="led-tag ${x.k==='sale'?'s':'r'}">${x.k==='sale'?'SALES':'RECEIPT'}</span> `;
+  const rows=[{c:[f?fd(f):'','<span class="led-tag o">OPENING</span> Opening balance','','',bt(P.ob),''],b:1}];
+  P.rows.forEach(x=>rows.push({c:[fd(x.d),tag(x)+E(x.p),x.dr?inr(x.dr):'',x.cr?inr(x.cr):'',bt(x.bal),x.rc?`<a class="acc-lk" title="Delete this receipt" onclick="${ref(()=>delRc(x.rc))}">✕</a>`:''],f:x.inv?()=>goViewInvoice(x.inv):undefined}));
+  rows.push({c:['','Total for period',inr(P.sales),inr(P.recd),'',''],b:1});
+  rows.push({c:[t>='9999'?'to date':fd(t),'Closing balance','','',bt(P.cb),''],b:1});
   const open=c.inv.filter(i=>i.out>0);
-  return page(c.name,()=>`<div class="acc-bk no-print"><button class="btn-clear" onclick="ACC.go('debtors')">‹ Debtors</button><button class="btn-save" onclick="${ref(()=>rcForm({cust:c.name}))}">+ Record receipt</button></div>
-   <div class="acc-sum">Outstanding: <b>${inr(c.bal)}</b>${c.adv>0.005?' · advance/credit '+inr(c.adv):''} · Phone ${E(c.phone||'—')}</div>`+
-   tbl('Ledger – '+c.name,['Date','Particulars','#Charged','#Received','#Balance',''],rows)+
-   (open.length?`<div class="acc-h">Unpaid invoices</div>`+tbl('Unpaid invoices',['Invoice','Date','#Amount','#Outstanding'],open.map(i=>[ '#'+E(i.invNo),fd(i.date),inr(i.grandTotal),inr(i.out)])):'' ),1);
-};
+  page(c.name,()=>`<div class="led-card"><div class="led-nm">${E(c.name)}</div>
+    ${inf.ph?`<div class="deb-sub">📞 <a class="acc-lk" href="tel:${E(inf.ph.replace(/[^\d+]/g,''))}">${E(inf.ph)}</a></div>`:''}
+    ${inf.ad?`<div class="deb-sub">📍 ${E(inf.ad)}</div>`:''}
+    <div class="led-out">Outstanding today: <b>${inr(Math.max(0,c.bal))}</b>${c.adv>0.005?' · advance/credit '+inr(c.adv):''}</div>
+    <div class="deb-sub">Statement period: <b>${perTxt(lper)}</b></div></div>
+   <div class="acc-pbar no-print">${perSel(lper,'ACC.lper')}${lper.k==='custom'?`<input type="date" value="${f}" onchange="ACC.lperd('f',this.value)"><input type="date" value="${t>='9999'?'':t}" onchange="ACC.lperd('t',this.value)">`:''}${f&&t<f?'<span style="color:var(--accent)">“From” is after “To”</span>':''}</div>
+   <div class="led-sums"><div class="led-sum"><span>Opening</span><b>${bt(P.ob)}</b></div><div class="led-sum"><span>Sales</span><b>${inr(P.sales)}</b></div><div class="led-sum"><span>Received</span><b>${inr(P.recd)}</b></div><div class="led-sum c"><span>Closing</span><b>${bt(P.cb)}</b></div></div>
+   <div class="acc-bk no-print"><button class="btn-clear" onclick="NAV.back()">‹ Back</button><button class="btn-save" onclick="${ref(()=>rcForm({cust:c.name}))}">+ Record receipt</button><button class="btn-save" style="background:var(--accent)" onclick="ACC.lpdf()">⬇ PDF</button><button class="btn-clear" onclick="ACC.csv()">⬇ CSV</button><button class="btn-clear" onclick="window.print()">🖨 Print</button></div>`+
+   tbl('Ledger – '+c.name,['Date','Particulars','#Sales','#Received','#Balance',''],rows)+
+   `<div class="deb-cnt">Balance is what the customer owes you. “Cr” means an advance in the customer’s favour. Tap a sale to open its invoice.</div>`+
+   (open.length?`<div class="acc-h">Unpaid invoices</div>`+tbl('Unpaid invoices',['Invoice','Date','#Amount','#Outstanding'],open.map(i=>['#'+E(i.invNo),fd(i.date),inr(i.grandTotal),inr(i.out)])):''))};
 function delRc(id){if(!confirm('Delete this receipt? The customer balance and cashbook will update.'))return;D.rc=D.rc.filter(r=>r.id!==id);save();toast('Receipt deleted');back()}
+
+// ── PDF FILES (no library: pages are drawn on A4 canvases and packed into a PDF) ──
+const PDFF="'DM Sans','Segoe UI',Roboto,'Noto Sans',Arial,sans-serif";
+function pdfFile(jpegs,iw,ih,title){
+  const enc=new TextEncoder(),parts=[],offs=[];let pos=0;
+  const push=b=>{const u=typeof b==='string'?enc.encode(b):b;parts.push(u);pos+=u.length};
+  const obj=(n,body)=>{offs[n]=pos;push(n+' 0 obj\n'+body+'\nendobj\n')};
+  const PW=595.28,PH=841.89,n=jpegs.length,ttl=String(title||'JKM').replace(/[^\x20-\x7e]/g,'').replace(/[()\\]/g,'');
+  push('%PDF-1.4\n');
+  obj(1,'<< /Type /Catalog /Pages 2 0 R >>');
+  obj(2,'<< /Type /Pages /Kids ['+jpegs.map((_,i)=>(4+3*i)+' 0 R').join(' ')+'] /Count '+n+' >>');
+  obj(3,'<< /Title ('+ttl+') /Producer (JKM Invoice Maker) >>');
+  jpegs.forEach((j,i)=>{const pg=4+3*i,cs=pg+1,im=pg+2,c='q '+PW+' 0 0 '+PH+' 0 0 cm /Im0 Do Q';
+    obj(pg,'<< /Type /Page /Parent 2 0 R /MediaBox [0 0 '+PW+' '+PH+'] /Resources << /XObject << /Im0 '+im+' 0 R >> /ProcSet [/PDF /ImageC] >> /Contents '+cs+' 0 R >>');
+    obj(cs,'<< /Length '+c.length+' >>\nstream\n'+c+'\nendstream');
+    offs[im]=pos;push(im+' 0 obj\n<< /Type /XObject /Subtype /Image /Width '+iw+' /Height '+ih+' /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length '+j.length+' >>\nstream\n');push(j);push('\nendstream\nendobj\n')});
+  const xr=pos,tot=4+3*n;let x='xref\n0 '+tot+'\n0000000000 65535 f \n';for(let i=1;i<tot;i++)x+=String(offs[i]).padStart(10,'0')+' 00000 n \n';
+  push(x+'trailer\n<< /Size '+tot+' /Root 1 0 R /Info 3 0 R >>\nstartxref\n'+xr+'\n%%EOF');
+  return new Blob(parts,{type:'application/pdf'})}
+function dlBlob(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},4000)}
+
+function PdfDoc(o){
+  const W=1240,H=1754,MX=62,MT=58,MB=84,CW=W-2*MX,pages=[],mc=document.createElement('canvas').getContext('2d');let pg=null,y=0;
+  const font=(px,b)=>(b?'700 ':'400 ')+px+'px '+PDFF;
+  function wrap(s,px,b,maxW){mc.font=font(px,b);const out=[];
+    String(s==null?'':s).split('\n').forEach(par=>{let cur='';
+      par.split(/\s+/).filter(Boolean).forEach(w=>{const t=cur?cur+' '+w:w;
+        if(mc.measureText(t).width<=maxW){cur=t;return}
+        if(cur)out.push(cur);
+        if(mc.measureText(w).width<=maxW){cur=w;return}
+        let part='';for(const ch of w){if(mc.measureText(part+ch).width>maxW){out.push(part);part=ch}else part+=ch}cur=part});
+      out.push(cur)});
+    return out.length?out:['']}
+  const T=(s,x,yy,px,b,col,al)=>pg.ops.push({o:'t',s:String(s),x,y:yy,f:font(px,b),c:col||'#1a1a2e',a:al||'left'});
+  const Rc=(x,yy,w,h,c)=>pg.ops.push({o:'r',x,y:yy,w,h,c});
+  const Ln=(x1,y1,x2,y2,c,w)=>pg.ops.push({o:'l',x1,y1,x2,y2,c:c||'#d4c9b8',w:w||1.5});
+  const room=h=>y+h<=H-MB;
+  function newPage(){pg={ops:[]};pages.push(pg);
+    T('JKM',MX,MT+34,42,1);T('Jugal Kishore Maheshwari · Badabazar, Jaleswar · 9437532500',MX,MT+66,18,0,'#7a7060');
+    if(o.title)T(o.title,W-MX,MT+32,28,1,'#c0392b','right');if(o.sub)T(o.sub,W-MX,MT+66,18,0,'#7a7060','right');
+    Ln(MX,MT+84,W-MX,MT+84,'#1a1a2e',3);y=MT+112}
+  const need=h=>{if(!pg||!room(h))newPage()};
+  // account heading: name, phone, address
+  function acct(name,phone,addr,extra){
+    const nm=wrap(name,36,1,CW-60),ad=addr?wrap('Address: '+addr,20,0,CW-60):[];
+    const h=22+nm.length*44+(phone?32:0)+ad.length*28+(extra?32:0)+30;
+    need(h+230);
+    Rc(MX,y,CW,h,'#f0ece4');Rc(MX,y,9,h,'#c0392b');
+    let yy=y+22+32;nm.forEach(l=>{T(l,MX+30,yy,36,1);yy+=44});yy-=14;
+    if(phone){T('Phone: '+phone,MX+30,yy+18,20,0,'#3a3a4e');yy+=32}
+    ad.forEach(l=>{T(l,MX+30,yy+18,20,0,'#3a3a4e');yy+=28});
+    if(extra)T(extra,MX+30,yy+18,19,0,'#7a7060');
+    y+=h+20}
+  // cols: [{h,w,a:'l'|'r'}]  rows: [{cells:[..],b,fill,col:{i:color}}]
+  function table(cols,rows,o2){o2=o2||{};const px=o2.px||19,pad=11,lh=Math.round(px*1.32),hh=px+pad*2+6,base=pad+Math.round(px*.82);
+    const head=()=>{Rc(MX,y,CW,hh,'#1a1a2e');let x=MX;cols.forEach(c=>{T(c.h,c.a==='r'?x+c.w-12:x+12,y+pad+px-1,px-1,1,'#fff',c.a==='r'?'right':'left');x+=c.w});y+=hh};
+    if(!room(hh+70))newPage();head();
+    rows.forEach((r,ri)=>{const lines=r.cells.map((s,i)=>wrap(s,px,r.b,cols[i].w-24)),n=Math.max(...lines.map(l=>l.length)),h=n*lh+pad*2-6;
+      if(!room(h)){newPage();if(o2.cont){T(o2.cont,MX,y+px,px+1,1,'#7a7060');y+=px+18}head()}
+      if(r.fill)Rc(MX,y,CW,h,r.fill);else if(ri%2)Rc(MX,y,CW,h,'#faf8f4');
+      let x=MX;r.cells.forEach((s,i)=>{const c=cols[i],col=(r.col&&r.col[i])||'#1a1a2e';
+        lines[i].forEach((ln,li)=>T(ln,c.a==='r'?x+c.w-12:x+12,y+base+li*lh,px,r.b,col,c.a==='r'?'right':'left'));x+=c.w});
+      Ln(MX,y+h,MX+CW,y+h,'#e6dfd2',1);y+=h})}
+  function note(s,px,col){px=px||18;const L=wrap(s,px,0,CW);need(L.length*(px+8)+10);L.forEach(l=>{T(l,MX,y+px,px,0,col||'#7a7060');y+=px+8});y+=6}
+  async function toPdf(title){
+    const N=pages.length,cv=document.createElement('canvas');cv.width=W;cv.height=H;const g=cv.getContext('2d'),jp=[];
+    const now=new Date(),stamp=fd(ymd(now))+' '+p2(now.getHours())+':'+p2(now.getMinutes());
+    for(let i=0;i<N;i++){g.fillStyle='#fff';g.fillRect(0,0,W,H);
+      const ops=pages[i].ops.concat([{o:'l',x1:MX,y1:H-MB+12,x2:W-MX,y2:H-MB+12,c:'#d4c9b8',w:1.5},
+        {o:'t',s:'Generated '+stamp,x:MX,y:H-MB+46,f:font(17,0),c:'#7a7060',a:'left'},{o:'t',s:'Page '+(i+1)+' of '+N,x:W-MX,y:H-MB+46,f:font(17,0),c:'#7a7060',a:'right'}]);
+      ops.forEach(op=>{if(op.o==='r'){g.fillStyle=op.c;g.fillRect(op.x,op.y,op.w,op.h)}
+        else if(op.o==='l'){g.strokeStyle=op.c;g.lineWidth=op.w;g.beginPath();g.moveTo(op.x1,op.y1);g.lineTo(op.x2,op.y2);g.stroke()}
+        else{g.font=op.f;g.fillStyle=op.c;g.textAlign=op.a;g.textBaseline='alphabetic';g.fillText(op.s,op.x,op.y)}});
+      const blob=await new Promise(r=>cv.toBlob(r,'image/jpeg',0.78));jp.push(new Uint8Array(await blob.arrayBuffer()));
+      if(i%4===3)await new Promise(r=>setTimeout(r,0))}
+    return pdfFile(jp,W,H,title)}
+  return{page:newPage,acct,table,note,gap:h=>{y+=h},toPdf,pages:()=>pages.length}}
+
+const LCOLS=[{h:'Date',w:128,a:'l'},{h:'Particulars',w:404,a:'l'},{h:'Sales',w:174,a:'r'},{h:'Received',w:174,a:'r'},{h:'Balance',w:236,a:'r'}];
+function ledPdfRows(P){
+  const rows=[{cells:[P.f?fd(P.f):'','Opening balance','','',bt(P.ob)],b:1,fill:'#f0ece4'}];
+  P.rows.forEach(x=>rows.push({cells:[fd(x.d),(x.k==='sale'?'Sales – ':'Receipt – ')+x.p,x.dr?inr(x.dr):'',x.cr?inr(x.cr):'',bt(x.bal)],col:{3:'#1e8449'}}));
+  rows.push({cells:['','Total for period',inr(P.sales),inr(P.recd),''],b:1,fill:'#f0ece4'});
+  rows.push({cells:[P.t>='9999'?'':fd(P.t),'Closing balance','','',bt(P.cb)],b:1,fill:'#e4ddd0'});
+  return rows}
+function ledSection(doc,c,P,perT){
+  const inf=custInfo(c);doc.acct(c.name,inf.ph,inf.ad,'Statement period: '+perT);
+  doc.table(LCOLS,ledPdfRows(P),{cont:'Ledger – '+c.name+' (continued)'});
+  if(P.ob<-0.005||P.cb<-0.005||P.rows.some(x=>x.bal<-0.005))doc.note('“Cr” = advance / credit in the customer’s favour. Otherwise the balance is the amount the customer owes.',17);
+  doc.gap(26)}
+const fname=s=>(String(s).replace(/[^\w]+/g,'-').replace(/^-+|-+$/g,'')||'Debtor');
+
+async function exportLedger(k){
+  const c=cust('9999-12-31')[k];if(!c){toast('Debtor not found');return}
+  const[f,t]=perOf(lper),P=ledPeriod(c,f,t),pt=perTxt(lper);
+  toast('Preparing PDF…');await new Promise(r=>setTimeout(r,40));
+  try{const doc=PdfDoc({title:'Debtor Ledger',sub:pt});ledSection(doc,c,P,pt);
+    dlBlob(await doc.toPdf('Ledger '+c.name),'Ledger-'+fname(c.name)+'-'+lt()+'.pdf');toast('✅ PDF downloaded')}
+  catch(e){console.error(e);alert('Could not create the PDF: '+e.message)}}
+
+// ── EXPORT SHEET (all debtors: balances only, or detailed ledgers) ──
+function xOpen(){
+  let ov=$('deb-xm');
+  if(!ov){ov=document.createElement('div');ov.id='deb-xm';ov.className='modal-overlay';document.body.appendChild(ov);ov.addEventListener('click',e=>{if(e.target===ov)xClose()})}
+  const scopes=[['screen','Debtors shown on screen now'+(dsearch.trim()?' (search: “'+dsearch.trim()+'”)':'')],['pending','All debtors with a pending balance'],['all','All debtors with a balance or activity in the period']];
+  ov.innerHTML=`<div class="modal-box" style="max-height:92vh;overflow:auto"><div class="modal-title">Export debtors to PDF</div>
+   <label>What do you want?</label>
+   <label class="xo"><input type="radio" name="xt" value="bal" ${xs.type==='bal'?'checked':''} onchange="ACC.xtype()"><span><b>Balances only</b><br>One table: every debtor with opening balance, sales, receipts and closing balance for the period.</span></label>
+   <label class="xo"><input type="radio" name="xt" value="led" ${xs.type==='led'?'checked':''} onchange="ACC.xtype()"><span><b>Detailed ledgers</b><br>Debtor-wise. Each ledger shows the name, phone and address, then every sale and receipt in date order — opening balance, transactions, closing balance.</span></label>
+   <label class="xo" id="xo-np" style="${xs.type==='led'?'':'display:none!important'}"><input type="checkbox" id="xp-np" ${xs.newpage?'checked':''}><span>Start each debtor on a new page</span></label>
+   <label style="margin-top:12px">Period</label>${perSel(xs,'ACC.xper','xp-k')}
+   <div class="xrow" id="xp-c" style="${xs.k==='custom'?'':'display:none'}"><input type="date" id="xp-f" value="${xs.f}"><input type="date" id="xp-t" value="${xs.t}"></div>
+   <label style="margin-top:12px">Debtors to include</label><select id="xp-s">${scopes.map(([k,l])=>`<option value="${k}"${xs.scope===k?' selected':''}>${E(l)}</option>`).join('')}</select>
+   <div class="modal-actions" style="margin-top:18px"><button class="modal-btn-cancel" onclick="ACC.xclose()">Cancel</button><button class="modal-btn-confirm" id="xgo" onclick="ACC.xgo()">⬇ Download PDF</button></div></div>`;
+  requestAnimationFrame(()=>ov.classList.add('active'))}
+function xClose(){const ov=$('deb-xm');if(ov)ov.classList.remove('active')}
+function xType(){const t=document.querySelector('#deb-xm input[name=xt]:checked').value;xs.type=t;$('xo-np').style.cssText=t==='led'?'':'display:none!important'}
+function xPer(k){xs.k=k;if(k==='custom'&&!xs.f){xs.f=fyS(lt());xs.t=lt();$('xp-f').value=xs.f;$('xp-t').value=xs.t}$('xp-c').style.display=k==='custom'?'flex':'none'}
+function xPick(M,f,t,scope){
+  const base=scope==='screen'?debKeys.map(k=>M[k]).filter(Boolean):Object.values(M),out=[];
+  base.forEach(c=>{const P=ledPeriod(c,f,t),act=Math.abs(P.ob)>0.005||P.rows.length>0||Math.abs(P.cb)>0.005;
+    if(scope==='pending'&&!(P.cb>0.005))return;if(scope==='all'&&!act)return;out.push({c,P})});
+  return out}
+async function xGo(){
+  xs.type=document.querySelector('#deb-xm input[name=xt]:checked').value;xs.k=$('xp-k').value;xs.scope=$('xp-s').value;xs.newpage=$('xp-np').checked;
+  if(xs.k==='custom'){xs.f=$('xp-f').value;xs.t=$('xp-t').value;
+    if(!xs.f||!xs.t){toast('Choose both the From and To dates');return}if(xs.f>xs.t){toast('“From” date is after the “To” date');return}}
+  const[f,t]=perOf(xs),pt=perTxt(xs),sel=xPick(debM||cust('9999-12-31'),f,t,xs.scope);
+  if(!sel.length){toast('No debtors to export for these choices');return}
+  xClose();toast('Preparing PDF…');await new Promise(r=>setTimeout(r,60));
+  const scopeTxt={screen:'Debtors as listed on screen',pending:'Debtors with a pending balance',all:'All debtors with a balance or activity'}[xs.scope];
+  try{
+    if(xs.type==='bal'){
+      sel.sort((a,b)=>b.P.cb-a.P.cb||a.c.name.localeCompare(b.c.name));
+      const doc=PdfDoc({title:'Debtors – Balances',sub:'Period: '+pt});doc.page();
+      doc.note(scopeTxt+' · '+sel.length+' debtor'+(sel.length===1?'':'s')+' · Balance = amount the customer owes you.',19,'#3a3a4e');
+      const S=k=>r2(sel.reduce((s,x)=>s+x.P[k],0)),rows=sel.map(({c,P})=>({cells:[c.name,custInfo(c).ph,bt(P.ob),inr(P.sales),inr(P.recd),bt(P.cb)],col:{4:'#1e8449'}}));
+      rows.push({cells:['TOTAL ('+sel.length+')','',bt(S('ob')),inr(S('sales')),inr(S('recd')),bt(S('cb'))],b:1,fill:'#e4ddd0'});
+      doc.table([{h:'Customer',w:344,a:'l'},{h:'Phone',w:184,a:'l'},{h:'Opening',w:146,a:'r'},{h:'Sales',w:140,a:'r'},{h:'Received',w:140,a:'r'},{h:'Closing',w:162,a:'r'}],rows,{cont:'Debtors – Balances (continued)'});
+      if(sel.some(x=>x.P.cb<-0.005||x.P.ob<-0.005))doc.note('“Cr” = advance / credit in the customer’s favour.',17);
+      dlBlob(await doc.toPdf('Debtors balances'),'JKM-Debtors-Balances-'+lt()+'.pdf');
+    }else{
+      sel.sort((a,b)=>a.c.name.localeCompare(b.c.name));
+      const doc=PdfDoc({title:'Debtor Ledgers',sub:'Period: '+pt});
+      sel.forEach(({c,P},i)=>{if(xs.newpage||i===0)doc.page();ledSection(doc,c,P,pt)});
+      dlBlob(await doc.toPdf('Debtor ledgers'),'JKM-Debtor-Ledgers-'+lt()+'.pdf');
+    }
+    toast('✅ PDF downloaded')}
+  catch(e){console.error(e);alert('Could not create the PDF: '+e.message)}}
 
 // ── RECEIPTS ─────────────────────────────────────
 const nextRcNo=()=>'R'+String(D.rc.reduce((m,r)=>Math.max(m,parseInt(String(r.no||'').replace(/\D/g,''))||0),0)+1).padStart(4,'0');/* [JKM-CLOUD] max+1 so merged devices never repeat a number */
+let rcEditId=null;
+/* pending balance box under the customer picker: updates when the customer or the amount changes */
+function rcShowBal(){
+  const box=$('rc_bal'),ci=$('f_cust');if(!box||!ci)return;
+  const name=ci.value.trim();if(!name){box.className='rc-bal';box.innerHTML='';return}
+  const c=cust('9999-12-31',rcEditId)[cid(name)],amt=r2(($('f_amt')||{}).value),bal=c?c.bal:0;
+  if(bal>0.005){
+    box.className='rc-bal due';
+    box.innerHTML='Previous pending balance: <b>'+inr(bal)+'</b>'+(amt>0?'<br>After this receipt: <b>'+inr(Math.max(0,r2(bal-amt)))+'</b>'+(amt>bal+0.005?' <span>('+inr(r2(amt-bal))+' extra stays as advance)</span>':''):'');
+  }else if(bal<-0.005){
+    box.className='rc-bal';box.innerHTML='No pending balance — this customer has an advance of <b>'+inr(-bal)+'</b>.';
+  }else{
+    box.className='rc-bal';box.innerHTML=c?'No pending balance for this customer.':'No previous balance — this customer has no earlier invoices.';
+  }
+}
+function rcPick(k){
+  const c=cust('9999-12-31',rcEditId)[k];if(!c)return;
+  $('f_cust').value=c.name;rcShowBal();
+}
 function rcForm(v,id){
+  rcEditId=id||null;
   const names=[...new Set(getHistory().map(i=>i.custName||'Walk-in').concat(D.op.deb.map(x=>x.name)))];
   const ex=id?D.rc.find(r=>r.id===id):null;
   const M=cust('9999-12-31',id);
   v=ex?{...ex,inv:(ex.al&&ex.al.length===1)?ex.al[0].inv:''}:{date:lt(),method:'Cash',inv:'',...v};
+  const pend=Object.values(M).filter(c=>c.bal>0.005).sort((a,b)=>a.name.localeCompare(b.name));
+  const pickHtml=`<div style="margin-bottom:9px"><label>Customers with pending dues</label><select id="rc_pick" onchange="ACC.rcPick(this.value)"><option value="">${pend.length?'— Select customer —':'No customers have pending dues'}</option>${pend.map(c=>`<option value="${E(c.k)}">${E(c.name)} — due ${inr(c.bal)}</option>`).join('')}</select></div>`;
   const invs=[['','Oldest invoices first (auto)']].concat(Object.values(M).flatMap(c=>c.inv.filter(i=>i.out>0).map(i=>[String(i.id),c.name+' – #'+i.invNo+' (due '+inr(i.out)+')'])));
-  return page(ex?'Edit receipt':'New receipt',()=>`<datalist id="cn">${names.map(n=>`<option value="${E(n)}">`).join('')}</datalist>`+
+  page(ex?'Edit receipt':'New receipt',()=>`<datalist id="cn">${names.map(n=>`<option value="${E(n)}">`).join('')}</datalist>`+
    form(ex?'Edit receipt '+ex.no:'Record receipt',[['date','Date money was received','date'],['cust','Customer','text'],['amt','Amount (₹)','number'],['method','Payment method','sel',METH],['ref','Reference / UTR / cheque no.','text'],['inv','Apply to','sel',invs],['note','Notes','text']],v,x=>{
      if(!x.date)return'Enter the receipt date.';if(!x.cust)return'Enter the customer name.';if(!(x.amt>0))return'Amount must be greater than zero.';
      const c=cust('9999-12-31',id)[cid(x.cust)],al=[];let left=x.amt;
      if(c){const L=x.inv?c.inv.filter(i=>String(i.id)===x.inv):c.inv;for(const i of L){if(left<=0)break;if(i.out>0){const a=r2(Math.min(left,i.out));al.push({inv:i.id,amt:a});left=r2(left-a)}}}
      if(x.inv&&!al.length)return'That invoice is already fully paid or belongs to another customer.';
      const r={id:id||uid(),no:ex?ex.no:nextRcNo(),date:x.date,cust:x.cust,amt:x.amt,method:x.method,acct:acctOf(x.method),ref:x.ref,al,note:x.note};
-     if(id)D.rc[D.rc.findIndex(q=>q.id===id)]=r;else D.rc.push(r);save();toast('✅ Receipt saved'+(left>0.005?' ('+inr(left)+' kept on account)':''));ACC.go(cur.n==='ledger'?'ledger':'receipts',cur.p)},back).replace('id="f_cust"','id="f_cust" list="cn"'));
+     if(id)D.rc[D.rc.findIndex(q=>q.id===id)]=r;else D.rc.push(r);save();toast('✅ Receipt saved'+(left>0.005?' ('+inr(left)+' kept on account)':''));ACC.go(cur.n==='ledger'?'ledger':'receipts',cur.p)},back)
+     .replace('<div style="margin-bottom:9px"><label>Customer</label>',pickHtml+'<div style="margin-bottom:9px"><label>Customer</label>')
+     .replace('id="f_cust"','id="f_cust" list="cn" oninput="ACC.rcBal()" onchange="ACC.rcBal()"')
+     .replace('id="f_amt"','id="f_amt" oninput="ACC.rcBal()"')
+     .replace('<div style="margin-bottom:9px"><label>Amount (₹)</label>','<div id="rc_bal" class="rc-bal"></div><div style="margin-bottom:9px"><label>Amount (₹)</label>'));
+  const cn=($('f_cust')||{}).value||'',pk=$('rc_pick');if(pk&&cn&&[...pk.options].some(o=>o.value===cid(cn)))pk.value=cid(cn);
+  rcShowBal();
 }
 V.receipts=()=>{cur={n:'receipts',p:{}};const[f,t]=range();
   const rows=ents().filter(e=>e.kind==='receipt'&&e.dr&&e.d>=f&&e.d<=t).sort((a,b)=>a.d<b.d?-1:1);
@@ -3171,7 +3645,7 @@ V.sledger=p=>{cur={n:'sledger',p,top:'purchases'};const s=sup('9999-12-31')[p.k]
   const L=[];if(s.open)L.push({d:D.op.date,p:'Opening balance',cr:s.open,dr:0});
   s.pu.forEach(u=>{L.push({d:u.date,p:'Purchase '+E(u.bill||u.desc),cr:u.amt+u.direct,dr:0,f:()=>puForm(u.id)});u.pay.forEach(y=>L.push({d:y.date,p:'Payment ('+E(y.method)+')',cr:0,dr:y.amt,del:[u.id,y.id]}))});
   L.sort((a,b)=>a.d<b.d?-1:1);let run=0;
-  return page(s.name,()=>`<div class="acc-bk no-print"><button class="btn-clear" onclick="ACC.go('purchases')">‹ Suppliers</button><button class="btn-save" onclick="${ref(()=>payForm(p.k))}">+ Pay supplier</button></div><div class="acc-sum">Outstanding: <b>${inr(s.bal)}</b></div>`+
+  return page(s.name,()=>`<div class="acc-bk no-print"><button class="btn-clear" onclick="NAV.back()">‹ Back</button><button class="btn-save" onclick="${ref(()=>payForm(p.k))}">+ Pay supplier</button></div><div class="acc-sum">Outstanding: <b>${inr(s.bal)}</b></div>`+
    tbl('Supplier ledger – '+s.name,['Date','Particulars','#Bought','#Paid','#Balance',''],L.map(x=>{run=r2(run+x.cr-x.dr);return{c:[fd(x.d),x.p,x.cr?inr(x.cr):'',x.dr?inr(x.dr):'',inr(run),x.del?`<a class="acc-lk" onclick="${ref(()=>{if(confirm('Delete this payment?')){const u=D.pu.find(q=>q.id===x.del[0]);u.pay=u.pay.filter(y=>y.id!==x.del[1]);save();back()}})}">✕</a>`:''],f:x.f}}),{empty:'No transactions.'}),1);
 };
 
@@ -3192,7 +3666,7 @@ V.cash=p=>{p=p||{};cur={n:'cash',p};const[f,t]=range(),ac=p.ac||'ALL',A=ac==='AL
 function detail(e){
   if(e.ref&&e.ref.startsWith('inv:'))return goViewInvoice(+e.ref.slice(4));
   const m={rc:'receipts',ex:'expenses',pu:'purchases',ot:'cash'}[(e.ref||'').split(':')[0]];
-  page('Transaction',()=>`<div class="acc-bk"><button class="btn-clear" onclick="ACC.go('cash')">‹ Cashbook</button>${m&&m!=='cash'?`<button class="btn-save" onclick="ACC.go('${m}')">Open ${m}</button>`:''}</div>`+tbl('Transaction',['Field','Value'],[['Date',fd(e.d)],['Voucher',E(e.v||'')],['Particulars',E(e.desc||'')],['Type',KL[e.kind]||e.kind],['Party',E(e.party||'')],['Account',e.a],['Debit',inr(e.dr)],['Credit',inr(e.cr)],['Method',E(e.m||'')],['Notes',E(e.note||'')]]));
+  page('Transaction',()=>`<div class="acc-bk"><button class="btn-clear" onclick="NAV.back()">‹ Back</button>${m&&m!=='cash'?`<button class="btn-save" onclick="ACC.go('${m}')">Open ${m}</button>`:''}</div>`+tbl('Transaction',['Field','Value'],[['Date',fd(e.d)],['Voucher',E(e.v||'')],['Particulars',E(e.desc||'')],['Type',KL[e.kind]||e.kind],['Party',E(e.party||'')],['Account',e.a],['Debit',inr(e.dr)],['Credit',inr(e.cr)],['Method',E(e.m||'')],['Notes',E(e.note||'')]]));
 }
 function otForm(id){
   const o=id&&D.ot.find(q=>q.id===id);
@@ -3301,9 +3775,13 @@ const realGo=(n,p)=>{load();(V[n]||V.dash)(p)};
 window.ACC={r:i=>R[i](),
   go:(n,p)=>{if(deferNav){pendNav=()=>realGo(n,p);return}realGo(n,p)},/* [JKM-CLOUD] a form waits for the cloud result before leaving */
   refresh:()=>{if(!pgRef||!document.querySelector('#screen-acc.active'))return;const y=window.scrollY;(V[cur.n]||V.dash)(cur.p);window.scrollTo(0,y)},/* [JKM-CLOUD] redraw after a remote change */
+  dq:(v,clr)=>{dsearch=v;if(clr){const i=$('deb-q');if(i){i.value='';i.focus()}}debPaint()},dsort:v=>{dsort=v;back()},
+  lper:k=>{lper.k=k;if(k==='custom'&&!lper.f){lper.f=fyS(lt());lper.t=lt()}back()},lperd:(k,v)=>{lper[k]=v;back()},lpdf:()=>exportLedger(cur.p.k),
+  dexp:xOpen,xclose:xClose,xgo:xGo,xtype:xType,xper:xPer,/* debtors: search, sort, ledger period, PDF export */
   per:k=>{per.k=k;if(k==='custom'&&!per.f){per.f=fyS(lt());per.t=lt()}back()},
   perd:(k,v)=>{per[k]=v;back()},dflt:v=>{dflt=v;back()},exf:(k,v)=>{exF[k]=v;back()},
   csv:csvOut,
+  rcPick:rcPick,rcBal:rcShowBal,/* receipt form: customer picker + pending-balance box */
   pdf:()=>html2pdf().set({margin:8,filename:'JKM-report.pdf',html2canvas:{scale:2},jsPDF:{unit:'mm',format:'a4',orientation:'landscape'}}).from($('acc-body')).save(),
   _e:{ents,bal,cust,pl,bs,sup,load,save,get D(){return D},set D(v){D=v}}};
 load();
